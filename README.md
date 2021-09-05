@@ -2,7 +2,7 @@
 
 ## Contributors
 
-Mark Schutera, Stefanie Schutera
+Mark & Stefanie Schutera
 
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>

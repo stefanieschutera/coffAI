@@ -1,13 +1,4 @@
-a {
-  background-color: rgb(245, 245, 245);
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.active {
-  color: #0d6efd; // TODO theming
-  text-decoration: underline;
-}
+@import '../../styles.scss';
 
 @media only screen and (max-width: 576px) {
   .wrapper {

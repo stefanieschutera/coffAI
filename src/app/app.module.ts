@@ -9,17 +9,32 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
-import { WorkComponent } from './work/work.component';
 import { AboutComponent } from './about/about.component';
+import { MainComponent } from './main/main.component';
+import { FaqComponent } from './faq/faq.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { ModelTrainingComponent } from './model-training/model-training.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'work', pathMatch: 'full' },
-  { path: 'work', component: WorkComponent },
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: 'main', component: MainComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'faq', component: FaqComponent },
+  { path: 'feedback', component: FeedbackComponent },
+  { path: 'train-a-model', component: ModelTrainingComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, FooterComponent, NavComponent, WorkComponent, AboutComponent],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    NavComponent,
+    AboutComponent,
+    MainComponent,
+    FaqComponent,
+    FeedbackComponent,
+    ModelTrainingComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,

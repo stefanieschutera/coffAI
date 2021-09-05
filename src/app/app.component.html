@@ -1,14 +1,34 @@
 <div class="container-fluid">
-  <mat-toolbar color="light">
-    <button mat-icon-button class="mobile-only" (click)="snav.toggle()">
+  <mat-toolbar color="light" class="py-1">
+    <a
+      class="nav"
+      mat-flat-button
+      routerLink="/main"
+      (click)="snav.close()"
+      [routerLinkActive]="['active']"
+      disableRipple
+    >
+      <h1><mat-icon class="me-2">coffee</mat-icon>coffAI</h1>
+    </a>
+    <span class="spacer"></span>
+    <div class="non-mobile">
+      <app-nav></app-nav>
+    </div>
+    <a
+      mat-stroked-button
+      color="primary"
+      routerLink="/train-a-model"
+      [routerLinkActive]="['mat-flat-button']"
+      disableRipple
+    >
+      train a model
+    </a>
+    <button mat-icon-button class="mobile-only ms-2" (click)="snav.toggle()">
       <mat-icon *ngIf="!snav.opened">menu</mat-icon>
       <mat-icon *ngIf="snav.opened">close</mat-icon>
     </button>
-    <div class="non-mobile m-auto">
-      <app-nav></app-nav>
-    </div>
   </mat-toolbar>
-  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav-container class="sidenav-container flex-fill">
     <mat-sidenav #snav class="mobile-only" role="directory" (click)="snav.toggle()" [autoFocus]="false">
       <app-nav></app-nav>
     </mat-sidenav>
