@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <mat-toolbar color="light">
+    <button mat-icon-button class="mobile-only" (click)="snav.toggle()">
+      <mat-icon *ngIf="!snav.opened">menu</mat-icon>
+      <mat-icon *ngIf="snav.opened">close</mat-icon>
+    </button>
+    <div class="non-mobile m-auto">
+      <app-nav></app-nav>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #snav class="mobile-only" role="directory" (click)="snav.toggle()" [autoFocus]="false">
+      <app-nav></app-nav>
+    </mat-sidenav>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+  </mat-sidenav-container>
+</div>
