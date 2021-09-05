@@ -47,3 +47,7 @@ To get a local copy up and running follow these simple steps.
    ```sh
    npm install
    ```
+3. Execute the command
+   ```sh
+   ng serve
+   ```
