@@ -14,6 +14,8 @@ import { MainComponent } from './main/main.component';
 import { FaqComponent } from './faq/faq.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ModelTrainingComponent } from './model-training/model-training.component';
+import { UploadDirective } from './shared/directives/upload.directive';
+import { UploadComponent } from './model-training/upload/upload.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'main', pathMatch: 'full' },
@@ -34,6 +36,8 @@ const routes: Routes = [
     FaqComponent,
     FeedbackComponent,
     ModelTrainingComponent,
+    UploadDirective,
+    UploadComponent,
   ],
   imports: [
     CommonModule,
