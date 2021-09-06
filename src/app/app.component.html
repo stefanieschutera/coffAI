@@ -1,26 +1,13 @@
 <div class="container-fluid">
   <mat-toolbar color="light" class="py-1">
-    <a
-      class="nav"
-      mat-flat-button
-      routerLink="/main"
-      (click)="snav.close()"
-      [routerLinkActive]="['active']"
-      disableRipple
-    >
+    <a class="nav" mat-flat-button routerLink="/main" (click)="snav.close()" disableRipple>
       <h1><mat-icon class="me-2">coffee</mat-icon>coffAI</h1>
     </a>
     <span class="spacer"></span>
     <div class="non-mobile">
       <app-nav></app-nav>
     </div>
-    <a
-      mat-stroked-button
-      color="primary"
-      routerLink="/train-a-model"
-      [routerLinkActive]="['mat-flat-button']"
-      disableRipple
-    >
+    <a class="nav" mat-flat-button routerLink="/train-a-model" [routerLinkActive]="['active']" disableRipple>
       train a model
     </a>
     <button mat-icon-button class="mobile-only ms-2" (click)="snav.toggle()">
