@@ -32,8 +32,12 @@ $theming-material-components-theme: mat-light-theme(
 }
 
 // Typography
-.h1 {
+h1 {
   font-weight: bold;
+}
+
+.text {
+  color: red;
 }
 
 html,
