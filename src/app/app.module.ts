@@ -14,10 +14,12 @@ import { FaqComponent } from './faq/faq.component';
 import { ModelTrainingComponent } from './model-training/model-training.component';
 import { UploadDirective } from './shared/directives/upload.directive';
 import { UploadComponent } from './model-training/upload/upload.component';
+import { TutorialComponent } from './tutorial/tutorial.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
-  { path: 'main', component: MainComponent },
+  { path: '', redirectTo: 'intro', pathMatch: 'full' },
+  { path: 'intro', component: MainComponent },
+  { path: 'tutorial', component: TutorialComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'train-a-model', component: ModelTrainingComponent },
 ];
@@ -32,6 +34,7 @@ const routes: Routes = [
     ModelTrainingComponent,
     UploadDirective,
     UploadComponent,
+    TutorialComponent,
   ],
   imports: [
     CommonModule,
