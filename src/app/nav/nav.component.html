@@ -1,5 +1,14 @@
 <nav class="wrapper">
-  <a class="nav" mat-flat-button routerLink="/intro" [routerLinkActive]="['active']" disableRipple>intro</a>
+  <a
+    class="nav"
+    mat-flat-button
+    routerLink="/"
+    [routerLinkActive]="['active']"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    disableRipple
+    >intro</a
+  >
   <a class="nav" mat-flat-button routerLink="/tutorial" [routerLinkActive]="['active']" disableRipple>tutorial</a>
   <a class="nav" mat-flat-button routerLink="/faq" [routerLinkActive]="['active']" disableRipple>faq</a>
   <app-footer class="mobile-only"></app-footer>
