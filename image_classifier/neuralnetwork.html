@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+  </head>
+  <body>
+    <div id="console"></div>
+    <!-- Add images that we will use to train and test -->
+    <img id="sunflower1" crossorigin src="https://i.imgur.com/QfDGakI.jpeg" width="227" height="227"/>
+    <img id="tulip1" crossorigin src="https://i.imgur.com/ZwrBvXB.jpeg" width="227" height="227"/>
+    <img id="test" crossorigin src="https://i.imgur.com/We7P1Pn.jpeg" width="227" height="227"/>
+    <!-- Load neuralnetwork.js after the content of the page -->
+    <script src="neuralnetwork.js"></script>
+    <button id="class-0">Add sunflower image for training</button>
+    <button id="class-1">Add tulip image for training</button>
+    <button id="class-inference">Inference on test image</button>
+    <button id="download">Download your model</button>
+  </body>
+</html>
