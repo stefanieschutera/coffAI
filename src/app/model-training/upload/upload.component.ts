@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.scss'],
 })
-export class UploadComponent implements OnInit {
-  constructor() {}
+export class UploadComponent {
+  files: File[] = [];
 
-  ngOnInit(): void {}
+  uploadFiles($event: any) {
+    try {
+      let uploadedFiles: File[] = Array.from($event?.target?.files);
+      this.files = [...this.files, ...uploadedFiles];
+    } catch (error: any) {
+      console.log('Error: Uploading selected files from browsing was not successful', error);
+    }
+  }
 
-  uploadFile(evt: any) {
-    console.log('evt: ', evt);
-    // evt is an array of the file(s) dropped on our div. Here we're assuming only one file has been uploaded
-    let payload = new FormData();
-    payload.append('data', evt[0]);
-    // File can now be uploaded by doing an http post with the payload
+  deleteFile(index: number) {
+    this.files.splice(index, 1);
   }
 }

@@ -28,7 +28,8 @@ $theming-material-components-theme: mat-light-theme(
 
 .container-content {
   display: flex;
-  min-height: 80vh;
+  min-height: 80%;
+  margin-top: 30px;
   &.center {
     justify-content: center;
     align-items: center;

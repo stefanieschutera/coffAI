@@ -8,6 +8,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 
 const modules = [
   MatCardModule,
@@ -18,6 +21,9 @@ const modules = [
   MatCheckboxModule,
   MatButtonToggleModule,
   MatDividerModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
 ];
 
 @NgModule({

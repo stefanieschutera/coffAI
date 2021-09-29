@@ -1,7 +1,30 @@
-mat-card {
+@import '../../../styles.scss';
+
+.uploadedFilesCol {
+  max-width: 250px;
+}
+
+mat-card.uploadedFiles {
+  background-color: transparent;
+  padding: 0;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+mat-list-item {
+  overflow-y: hidden;
+}
+
+mat-card.dragAndDrop {
   border-style: dashed;
   min-height: 50vh;
+  max-height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+mat-list {
+  max-height: 100px;
+  overflow: auto;
 }

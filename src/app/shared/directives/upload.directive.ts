@@ -1,37 +1,34 @@
-import { Directive, Output, EventEmitter, HostBinding, HostListener, HostBindingDecorator } from '@angular/core';
+import { Directive, Output, EventEmitter, HostBinding, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appUpload]',
 })
 export class UploadDirective {
-  @Output() onFileDropped = new EventEmitter<any>();
-  @HostBinding('style.background-color') public background = '#fff';
-  @HostBinding('style.opacity') public opacity = '1';
+  @HostBinding('class.fileover') fileOver: boolean = false;
+  @Output() fileDropped = new EventEmitter<any>();
 
-  //Dragover listener, when something is dragged over our host element
+  // Dragover listener
   @HostListener('dragover', ['$event']) onDragOver(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
-    this.background = '#9ecbec';
-    this.opacity = '0.8';
+    this.fileOver = true;
   }
 
-  //Dragleave listener, when something is dragged away from our host element
+  // Dragleave listener
   @HostListener('dragleave', ['$event']) public onDragLeave(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
-    this.background = '#fff';
-    this.opacity = '1';
+    this.fileOver = false;
   }
 
-  @HostListener('drop', ['$event']) public ondrop(evt: any) {
+  // Drop listener
+  @HostListener('drop', ['$event']) public onDrop(evt: any) {
     evt.preventDefault();
     evt.stopPropagation();
-    this.background = '#f5fcff';
-    this.opacity = '1';
+    this.fileOver = false;
     let files = evt.dataTransfer.files;
     if (files.length > 0) {
-      this.onFileDropped.emit(files);
+      this.fileDropped.emit(files);
     }
   }
 }
