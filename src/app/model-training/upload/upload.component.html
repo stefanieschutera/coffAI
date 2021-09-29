@@ -1,11 +1,23 @@
 <div class="row d-flex justify-content-center">
+  <div class="col-sm">
+    <mat-card class="mat-elevation-z0 text-center dragAndDrop" appUpload>
+      <mat-card-content>
+        <h3>drag and drop files here or</h3>
+        <button type="button" mat-stroked-button (click)="browseForFiles.click()" color="primary">
+          browse for files
+        </button>
+        <input hidden (change)="uploadFiles($event)" #browseForFiles type="file" multiple />
+      </mat-card-content>
+    </mat-card>
+  </div>
   <div class="col-sm uploadedFilesCol">
     <mat-card class="mat-elevation-z0 uploadedFiles">
       <mat-card-content>
+        <p *ngIf="files.length == 0" class="text-center m-5">No files yet.</p>
         <mat-list role="list" *ngFor="let file of files; first as first; let index = index">
           <mat-divider *ngIf="!first"></mat-divider>
           <mat-list-item role="listitem" class="p-0">
-            {{ file.name.length > 18 ? (file.name | slice: 0:18) + '..' : file.name }}
+            {{ file.name.length > 20 ? (file.name | slice: 0:20) + '..' : file.name }}
             <div class="spacer"></div>
             <button
               mat-icon-button
@@ -18,17 +30,6 @@
             </button>
           </mat-list-item>
         </mat-list>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="col-sm">
-    <mat-card class="mat-elevation-z0 text-center dragAndDrop" appUpload>
-      <mat-card-content>
-        <h3>drag and drop files here or</h3>
-        <button type="button" mat-stroked-button (click)="browseForFiles.click()" color="primary">
-          browse for files
-        </button>
-        <input hidden (change)="uploadFiles($event)" #browseForFiles type="file" multiple />
       </mat-card-content>
     </mat-card>
   </div>

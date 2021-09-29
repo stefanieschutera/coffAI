@@ -1,5 +1,7 @@
 # coffAI
 
+UX Design Entwürfe: https://xd.adobe.com/view/25328798-884f-4071-860f-60e627fb0c00-7061/
+
 ## Contributors
 
 Mark & Stefanie Schutera
