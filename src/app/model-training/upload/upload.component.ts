@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { from, Observable, Observer, of } from 'rxjs';
 import { IUploadedData } from '../IData';
-import { concatMap, catchError, take } from 'rxjs/operators';
+import { concatMap, catchError, take, delay } from 'rxjs/operators';
 
 const INVALID_FILE = ' Invalid file.';
 const INVALID_IMAGE = ' Invalid image.';
@@ -15,6 +15,8 @@ const INVALID_SIZE = ' Invalid Size.';
 export class UploadComponent {
   @Output() uploadedData: EventEmitter<IUploadedData> = new EventEmitter();
   images: File[] = [];
+  showSpinner: boolean = false;
+  showResult: boolean = false;
 
   uploadImages($event: any) {
     const images = $event?.target?.files;
@@ -78,8 +80,11 @@ export class UploadComponent {
     return mimeType.match(/image\/*/) !== null;
   }
 
-  trainModel() {
-    alert('Not implemented');
+  async trainModel() {
+    this.showSpinner = true;
+    await new Promise((f) => setTimeout(f, 2000)); // TODO PO add your funny method
+    this.showSpinner = false;
+    this.showResult = true;
   }
 
   deleteImage(index: number) {

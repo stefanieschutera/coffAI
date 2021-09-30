@@ -12,22 +12,48 @@
     <div class="row d-flex justify-content-center">
       <div class="col mainCol">
         <mat-card class="text-center main center" appUpload>
-          <mat-card-content *ngIf="false">
-            <mat-spinner color="accent"></mat-spinner>
+          <mat-card-content *ngIf="showSpinner">
+            <mat-spinner class="mx-auto mb-4" color="accent"></mat-spinner>
+            <h3>wait while your model is training</h3>
           </mat-card-content>
-          <mat-card-content>
+          <mat-card-content *ngIf="!showSpinner && !showResult">
             <h3>drag and drop images here or</h3>
             <button type="button" mat-raised-button (click)="browseForImages.click()" color="primary">
               browse for images
             </button>
-            <input hidden (change)="uploadImages($event)" #browseForImages type="file" multiple accept="image/*" />
+            <input hidden (change)="uploadImages($event)" #browseForImages type="file" accept="image/*" multiple />
+          </mat-card-content>
+          <mat-card-content *ngIf="showResult">
+            <h2>your result</h2>
+            <h3>precision: 98%</h3>
+            <div class="progress mb-2">
+              <div
+                class="progress-bar bg-accent"
+                role="progressbar"
+                style="width: 98%"
+                aria-valuenow="98"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
+            <h3>recall: 59%</h3>
+            <div class="progress mb-2">
+              <div
+                class="progress-bar bg-accent"
+                role="progressbar"
+                style="width: 59%"
+                aria-valuenow="59"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+            </div>
           </mat-card-content>
         </mat-card>
       </div>
       <div class="col uploadedFilesCol">
         <mat-card *ngIf="!thereAreImages()" class="text-center uploadedFiles center">
           <mat-card-content>
-            <p class="text-center m-5">No images yet.</p>
+            <p class="text-center m-5">no images yet</p>
           </mat-card-content>
         </mat-card>
         <mat-card *ngIf="thereAreImages()" class="uploadedFiles">
