@@ -4,11 +4,11 @@
   max-width: 300px;
 }
 
-mat-list-item {
-  overflow-y: hidden;
+.dragAndDropCol {
+  min-width: 50vw;
 }
+
 mat-card.uploadedFiles {
-  // background-color: transparent;
   border-style: solid;
   border-width: 2px;
   padding: 0;
@@ -24,7 +24,15 @@ mat-card.dragAndDrop {
   align-items: center;
 }
 
-mat-list {
-  max-height: 100px;
-  overflow: auto;
+mat-list-item {
+  overflow-y: hidden;
 }
+
+.button-row {
+  width: 100vw;
+}
+
+// mat-list {
+//   // max-height: 100px;
+//   // overflow: auto;
+// }
