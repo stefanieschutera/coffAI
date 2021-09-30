@@ -11,7 +11,7 @@
     </div>
     <div class="row d-flex justify-content-center">
       <div class="col dragAndDropCol">
-        <mat-card class="text-center dragAndDrop" appUpload>
+        <mat-card class="text-center dragAndDrop center" appUpload>
           <mat-card-content>
             <h3>drag and drop images here or</h3>
             <button type="button" mat-raised-button (click)="browseForImages.click()" color="primary">
@@ -22,9 +22,13 @@
         </mat-card>
       </div>
       <div class="col uploadedFilesCol">
-        <mat-card class="text-center uploadedFiles">
+        <mat-card *ngIf="!thereAreImages()" class="text-center uploadedFiles center">
           <mat-card-content>
-            <p *ngIf="images.length == 0" class="text-center m-5">No images yet.</p>
+            <p class="text-center m-5">No images yet.</p>
+          </mat-card-content>
+        </mat-card>
+        <mat-card *ngIf="thereAreImages()" class="uploadedFiles">
+          <mat-card-content>
             <mat-list role="list" *ngFor="let image of images; first as first; let index = index">
               <mat-divider *ngIf="!first"></mat-divider>
               <mat-list-item role="listitem" class="p-0">

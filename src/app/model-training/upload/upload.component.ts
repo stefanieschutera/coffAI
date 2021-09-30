@@ -89,4 +89,8 @@ export class UploadComponent {
   notImplemented() {
     alert('Not implemented');
   }
+
+  thereAreImages(): boolean {
+    return this.images.length !== 0 && this.images !== undefined;
+  }
 }
