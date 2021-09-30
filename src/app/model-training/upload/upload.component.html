@@ -1,6 +1,6 @@
 <div class="container container-content center">
   <div>
-    <div class="d-flex justify-content-center mb-3">
+    <div class="d-flex justify-content-end mb-3">
       <button mat-raised-button class="me-2" color="secondary" (click)="notImplemented()">reset</button>
       <button mat-raised-button class="me-2" color="secondary" (click)="notImplemented()">upload example data</button>
       <button mat-raised-button color="primary" (click)="trainModel()" [disabled]="images.length == 0">
@@ -14,7 +14,7 @@
         <mat-card class="text-center dragAndDrop" appUpload>
           <mat-card-content>
             <h3>drag and drop images here or</h3>
-            <button type="button" mat-stroked-button (click)="browseForImages.click()" color="primary">
+            <button type="button" mat-raised-button (click)="browseForImages.click()" color="primary">
               browse for images
             </button>
             <input hidden (change)="uploadImages($event)" #browseForImages type="file" multiple accept="image/*" />
@@ -28,7 +28,7 @@
             <mat-list role="list" *ngFor="let image of images; first as first; let index = index">
               <mat-divider *ngIf="!first"></mat-divider>
               <mat-list-item role="listitem" class="p-0">
-                {{ image.name.length > 20 ? (image.name | slice: 0:20) + '..' : image.name }}
+                {{ image.name }}
                 <div class="spacer"></div>
                 <button
                   mat-icon-button
