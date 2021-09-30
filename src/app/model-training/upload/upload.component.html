@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex justify-content-end mb-3">
       <button mat-raised-button class="me-2" color="secondary" (click)="notImplemented()">reset</button>
-      <button mat-raised-button class="me-2" color="secondary" (click)="notImplemented()">upload example data</button>
+      <button mat-raised-button class="me-2" color="secondary" (click)="notImplemented()">upload sample data</button>
       <button mat-raised-button color="primary" (click)="trainModel()" [disabled]="images.length == 0">
         <span [matTooltip]="images.length == 0 ? 'You need to upload some images first' : ''" matTooltipPosition="above"
           >train</span
@@ -10,8 +10,11 @@
       </button>
     </div>
     <div class="row d-flex justify-content-center">
-      <div class="col dragAndDropCol">
-        <mat-card class="text-center dragAndDrop center" appUpload>
+      <div class="col mainCol">
+        <mat-card class="text-center main center" appUpload>
+          <mat-card-content *ngIf="false">
+            <mat-spinner color="accent"></mat-spinner>
+          </mat-card-content>
           <mat-card-content>
             <h3>drag and drop images here or</h3>
             <button type="button" mat-raised-button (click)="browseForImages.click()" color="primary">
