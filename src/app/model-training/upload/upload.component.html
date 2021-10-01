@@ -2,8 +2,8 @@
   <div>
     <div class="d-flex justify-content-end mb-4">
       <button mat-raised-button class="me-2" color="primary" (click)="reset()" [disabled]="!thereAreImages()">
-        <span [matTooltip]="thereAreImages() ? 'reset' : 'there is nothing to reset'" matTooltipPosition="above">
-          <mat-icon>autorenew</mat-icon>reset
+        <span [matTooltip]="thereAreImages() ? '' : 'there is nothing to reset'" matTooltipPosition="above">
+          <mat-icon class="me-1">autorenew</mat-icon>reset
         </span>
       </button>
       <!-- TODO Decide if this is a wanted feature? -->
@@ -13,7 +13,7 @@
         </span>
       </button> -->
       <button mat-raised-button class="me-2" color="primary" (click)="exportModel()" *ngIf="showTrainingResult">
-        <mat-icon>file_download</mat-icon>
+        <mat-icon class="me-1">file_download</mat-icon>
         export
       </button>
       <button
@@ -24,13 +24,13 @@
         *ngIf="!showTrainingResult"
       >
         <span [matTooltip]="thereAreImages() ? '' : 'upload some images first'" matTooltipPosition="above">
-          <mat-icon>psychology</mat-icon>
+          <mat-icon class="me-1">psychology</mat-icon>
           train
         </span>
       </button>
     </div>
     <div class="row d-flex justify-content-center">
-      <div class="col-sm mainCol">
+      <div class="col-lg mainCol">
         <mat-card class="text-center main center" *ngIf="showSpinner">
           <mat-card-content>
             <mat-spinner class="mx-auto mb-4" color="accent"></mat-spinner>
@@ -45,16 +45,16 @@
             </button>
             <input hidden (change)="uploadImages($event)" #browseForImages type="file" accept="image/*" multiple />
           </mat-card-content>
-          <mat-card-content *ngIf="showTrainingResult" class="flex-grow">
-            <div class="row">
-              <div class="col">
+          <mat-card-content *ngIf="showTrainingResult" class="flex-grow p-4">
+            <div class="row d-flex">
+              <div class="col-sm me-3">
                 <h2>your result</h2>
                 <div class="row">
-                  <div class="col">
-                    <h3>precision<br />98%</h3>
-                    <div class="progress mb-2 bg-accent">
+                  <div class="col-sm">
+                    <h3>precision: 98%</h3>
+                    <div class="progress mb-2">
                       <div
-                        class="progress-bar"
+                        class="progress-bar bg-accent"
                         role="progressbar"
                         style="width: 98%"
                         aria-valuenow="98"
@@ -63,8 +63,8 @@
                       ></div>
                     </div>
                   </div>
-                  <div class="col">
-                    <h3>recall<br />59%</h3>
+                  <div class="col-sm">
+                    <h3>recall: 59%</h3>
                     <div class="progress mb-2">
                       <div
                         class="progress-bar bg-accent"
@@ -78,7 +78,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col">
+              <div class="col-sm">
                 <h2>try it out</h2>
                 <button
                   type="button"
@@ -91,8 +91,8 @@
                 </button>
                 <input hidden (change)="uploadTestImage($event)" #browseForTestImages type="file" accept="image/*" />
                 <div *ngIf="showTestResult">
-                  <h3>current image: {{ testImage?.name }}</h3>
-                  <h3>matching 12%</h3>
+                  <h3>image: {{ testImage?.name }}</h3>
+                  <h3>matching: 12%</h3>
                   <div class="progress mb-2">
                     <div
                       class="progress-bar bg-accent"
@@ -109,7 +109,7 @@
           </mat-card-content>
         </mat-card>
       </div>
-      <div class="col-sm uploadedFilesCol">
+      <div class="col-lg uploadedFilesCol">
         <mat-card *ngIf="!thereAreImages()" class="text-center uploadedFiles center">
           <mat-card-content>
             <p class="text-center m-5">no images yet</p>
@@ -128,8 +128,9 @@
                   aria-label="Delete item"
                   class="clear-button"
                   (click)="deleteImage(index)"
+                  *ngIf="!showTrainingResult"
                 >
-                  <mat-icon *ngIf="!showTrainingResult">close</mat-icon>
+                  <mat-icon>close</mat-icon>
                 </button>
               </mat-list-item>
             </mat-list>
