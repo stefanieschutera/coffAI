@@ -9,9 +9,12 @@
   >
     intro
   </button>
-  <button class="nav me-2" color="primary" routerLink="/tutorial" [routerLinkActive]="['active']" mat-stroked-button>
+  <!-- TODO Decide: Do we even need a tutorial? -->
+  <!-- <button class="nav me-2" color="primary" routerLink="/tutorial" [routerLinkActive]="['active']" mat-stroked-button>
     tutorial
+  </button> -->
+  <button class="nav me-2" color="primary" routerLink="/faq" [routerLinkActive]="['active']" mat-stroked-button>
+    faq
   </button>
-  <button class="nav me-2" color="primary" routerLink="/faq" [routerLinkActive]="['active']" mat-stroked-button>faq</button>
   <app-footer class="mobile-only"></app-footer>
 </nav>

@@ -1,18 +1,18 @@
 <div class="container-fluid">
   <mat-toolbar color="light" class="py-1">
-    <button mat-stroked-button class="nav me-2" routerLink="" (click)="snav.close()">
+    <button mat-stroked-button class="nav me-2" color="primary" routerLink="" (click)="snav.close()">
       <h1><mat-icon class="me-2">coffee</mat-icon>coffAI</h1>
     </button>
     <span class="spacer"></span>
     <div class="non-mobile">
       <app-nav></app-nav>
     </div>
-    <button mat-raised-button class="nav" color="accent" routerLink="/train-a-model" [routerLinkActive]="['active']">
+    <button mat-stroked-button class="nav" color="accent" routerLink="/train-a-model" [routerLinkActive]="['active']">
       train a model
     </button>
     <button mat-icon-button class="mobile-only ms-2" (click)="snav.toggle()">
-      <mat-icon *ngIf="!snav.opened">menu</mat-icon>
-      <mat-icon *ngIf="snav.opened">close</mat-icon>
+      <mat-icon *ngIf="!snav.opened" color="primary">menu</mat-icon>
+      <mat-icon *ngIf="snav.opened" color="primary">close</mat-icon>
     </button>
   </mat-toolbar>
   <mat-sidenav-container class="sidenav-container flex-fill">
