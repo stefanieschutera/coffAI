@@ -1,4 +1,4 @@
-@import '../styles.scss';
+@import '../styles/styles.scss';
 
 .container-fluid {
   display: flex;
@@ -13,10 +13,10 @@
   padding: 0;
 }
 
-mat-sidenav {
-  width: 100%;
-}
-
 .flex-fill {
   flex: 1;
+}
+
+mat-sidenav {
+  width: 100%;
 }

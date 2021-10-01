@@ -1,0 +1,65 @@
+@import './theme.scss';
+@import './colors.scss';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+// Configurations for Responsiveness
+@media only screen and (min-width: 576px) {
+  .mobile-only {
+    display: none;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .non-mobile {
+    display: none;
+  }
+}
+
+.material-icons {
+  vertical-align: middle;
+}
+
+.container-content {
+  min-height: 80%;
+  margin-top: 30px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Typography
+h1,
+h2 {
+  font-weight: normal;
+}
+p {
+  font-size: 16px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card {
+  margin-bottom: 20px;
+}
+
+mat-card-title {
+  line-height: normal;
+}
+
+button.nav {
+  border: hidden;
+}
+
+button.nav.active {
+  text-decoration: underline;
+}

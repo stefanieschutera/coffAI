@@ -1,7 +1,32 @@
-mat-card {
-  border-style: dashed;
-  min-height: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@import '../../../styles/styles.scss';
+
+.uploadedFilesCol {
+  width: 300px;
+}
+
+.mainCol {
+  min-width: 50vw;
+}
+
+mat-card.uploadedFiles {
+  height: 50vh;
+  overflow-y: auto;
+  padding: 0;
+}
+
+mat-card.main {
+  height: 50vh;
+}
+
+// TODO exchange with variable
+.bg-accent {
+  background-color: #afb42b;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-grow {
+  flex-grow: 4;
 }

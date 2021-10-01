@@ -17,8 +17,7 @@ import { UploadComponent } from './model-training/upload/upload.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'intro', pathMatch: 'full' },
-  { path: 'intro', component: MainComponent },
+  { path: '', pathMatch: 'full', component: MainComponent },
   { path: 'tutorial', component: TutorialComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'train-a-model', component: ModelTrainingComponent },

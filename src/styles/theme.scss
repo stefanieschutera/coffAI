@@ -1,0 +1,15 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+// Ready to use Material Design color palettes:
+// https://material.io/design/color/the-color-system.html#tools-for-picking-colors
+
+$primary: mat-palette($mat-blue-gray);
+$accent-light: mat-palette($mat-lime, 700, 600, A100);
+// $accent-dark: mat-palette($mat-lime, 500, 200, A200);
+$warn: mat-palette($mat-red);
+
+$theme: mat-light-theme($primary, $accent-light, $warn);
+// $theme: mat-dark-theme($primary, $accent-dark, $warn);
+
+@include angular-material-theme($theme);
