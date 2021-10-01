@@ -1,7 +1,7 @@
 <div class="container container-content center">
   <div>
     <div class="d-flex justify-content-end mb-4">
-      <button mat-raised-button class="me-2" color="secondary" (click)="reset()" [disabled]="!thereAreImages()">
+      <button mat-raised-button class="me-2" color="warn" (click)="reset()" [disabled]="!thereAreImages()">
         <span [matTooltip]="thereAreImages() ? 'reset' : 'there is nothing to reset'" matTooltipPosition="above">
           <mat-icon>autorenew</mat-icon>reset
         </span>
