@@ -1,6 +1,7 @@
 # coffAI
 
 UX Design Entwürfe: https://xd.adobe.com/view/25328798-884f-4071-860f-60e627fb0c00-7061/
+One Day maybe Drag and Drop: https://medium.com/@tarekabdelkhalek/how-to-create-a-drag-and-drop-file-uploading-in-angular-78d9eba0b854
 
 ## Contributors
 
