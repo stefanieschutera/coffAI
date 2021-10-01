@@ -4,10 +4,12 @@
 // Ready to use Material Design color palettes:
 // https://material.io/design/color/the-color-system.html#tools-for-picking-colors
 
-$my-custom-primary: mat-palette($mat-blue-gray);
-$my-custom-accent: mat-palette($mat-lime, 700, 600, A100);
-$my-custom-warn: mat-palette($mat-red);
+$primary: mat-palette($mat-blue-gray);
+$accent-light: mat-palette($mat-lime, 700, 600, A100);
+// $accent-dark: mat-palette($mat-lime, 500, 200, A200);
+$warn: mat-palette($mat-red);
 
-$my-custom-theme: mat-light-theme($my-custom-primary, $my-custom-accent, $my-custom-warn);
+$theme: mat-light-theme($primary, $accent-light, $warn);
+// $theme: mat-dark-theme($primary, $accent-dark, $warn);
 
-@include angular-material-theme($my-custom-theme);
+@include angular-material-theme($theme);
